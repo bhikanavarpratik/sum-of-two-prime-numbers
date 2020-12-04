@@ -1,0 +1,180 @@
+
+GEEKSFORGEEKS
+Check if a prime number can be expressed as sum of two Prime Numbers
+ 
+Given a prime number 
+
+N. The task is to check if it is possible to express 
+
+N as sum of two separate prime numbers.
+
+Note: The range of N is less than 108.
+
+Examples:
+
+Input : N = 13
+Output : Yes
+Explanation : The number 13 can be written as 11 + 2, 
+here 11 and 2 are both prime.
+
+Input : N = 11
+Output : No
+Recommended: Please try your approach on {IDE} first, before moving on to the solution.
+Simple Solution: A simple solution is to create a sieve to store all the prime numbers less than the number N. Then run a loop from 1 to N and check whether 
+
+i and 
+
+n-i are both prime or not. If yes then print Yes, else No.
+
+Efficient solution: Apart from 2, all of the prime numbers are odd. So it is not possible to represent a prime number (which is odd) to be written as a sum of two odd prime numbers, so we are sure that one of the two prime number should be 2. So we have to check whether n-2 is prime or not. If it holds we print Yes else No.
+
+
+
+For example, if the number is 19 then we have to check whether 19-2 = 17 is a prime number or not. If 17 is a prime number then print yes otherwise print no.
+
+Below is the implementation of the above approach:
+
+// C++ program to check if a prime number 
+// can be expressed as sum of 
+// two Prime Numbers 
+#include <bits/stdc++.h> 
+
+using namespace std; 
+
+  
+// Function to check whether a number 
+// is prime or not 
+
+bool isPrime(int n) 
+{ 
+
+    if (n <= 1) 
+
+        return false; 
+
+  
+
+    for (int i = 2; i <= sqrt(n); i++) { 
+
+        if (n % i == 0) 
+
+            return false; 
+
+    } 
+
+  
+
+    return true; 
+} 
+
+  
+// Function to check if a prime number 
+// can be expressed as sum of 
+// two Prime Numbers 
+
+bool isPossible(int N) 
+{ 
+
+    // if the number is prime, 
+
+    // and number-2 is also prime 
+
+    if (isPrime(N) && isPrime(N - 2)) 
+
+        return true; 
+
+    else
+
+        return false; 
+} 
+
+  
+// Driver code 
+
+int main() 
+{ 
+
+    int n = 13; 
+
+  
+
+    if (isPossible(n)) 
+
+        cout << "Yes"; 
+
+    else
+
+        cout << "No"; 
+
+  
+
+    return 0; 
+} 
+Output:
+Yes
+Attention reader! Don’t stop learning now. Get hold of all the important DSA concepts with the DSA Self Paced Course at a student-friendly price and become industry ready.
+
+
+
+
+Recommended Posts:
+Count prime numbers that can be expressed as sum of consecutive prime numbers
+Check if a number can be expressed as sum two abundant numbers
+Check if a given number can be expressed as pair-sum of sum of first X natural numbers
+Check if a number can be expressed as sum of two Perfect powers
+Check if a number can be expressed as a sum of consecutive numbers
+Check if a number can be expressed as a product of exactly K prime divisors
+Check if an integer can be expressed as a sum of two semi-primes
+Check whether a number can be expressed as a product of single digit numbers
+Elements of Array which can be expressed as power of prime numbers
+Check if N can be expressed as product of 3 distinct numbers
+Count primes that can be expressed as sum of two consecutive primes and 1
+Count of primes below N which can be expressed as the sum of two primes
+Find ways an Integer can be expressed as sum of n-th power of unique natural numbers
+Check if a number can be expressed as power | Set 2 (Using Log)
+Check if a number can be expressed as 2^x + 2^y
+Check if a number N can be expressed in base B
+Check if a number can be expressed as x^y (x raised to power y)
+Check if a number can be expressed as a^b | Set 2
+N expressed as sum of 4 prime numbers
+Count of primes in a given range that can be expressed as sum of perfect squares
+
+
+andrew1234
+Third year Department of Information Technology Jadavpur University
+If you like GeeksforGeeks and would like to contribute, you can also write an article using contribute.geeksforgeeks.org or mail your article to contribute@geeksforgeeks.org. See your article appearing on the GeeksforGeeks main page and help other Geeks.
+
+Please Improve this article if you find anything incorrect by clicking on the "Improve Article" button below.
+
+
+
+Improved By : AnkitRai01, chitranayal, Shivi_Aggarwal, shrikanth13, UtkarshMaharana
+
+Article Tags : Mathematical  Prime Numbersieve
+Practice Tags : MathematicalPrime Numbersieve
+Read Full Article
+710-B, Advant Navis Business Park,
+Sector-142, Noida, Uttar Pradesh - 201305
+feedback@geeksforgeeks.org
+COMPANY
+About Us
+Careers
+Privacy Policy
+Contact Us
+LEARN
+Algorithms
+Data Structures
+Languages
+CS Subjects
+Video Tutorials
+PRACTICE
+Company-wise
+Topic-wise
+Contests
+Subjective Questions
+CONTRIBUTE
+Write an Article
+GBlog
+Videos
+    
+@geeksforgeeks, Some rights reserved
